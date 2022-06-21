@@ -7,6 +7,11 @@ import { ItemComponent } from './item/item.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ItemsListComponent } from './items-list/items-list.component'
 
+import {MatTableModule} from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ItemsDataService } from './items-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,9 +20,11 @@ import { ItemsListComponent } from './items-list/items-list.component'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    MatTableModule
   ],
-  providers: [],
+  providers: [ItemsDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
